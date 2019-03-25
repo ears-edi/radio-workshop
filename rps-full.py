@@ -37,9 +37,9 @@ def did_user_win(user_input, opponent_input):
     representing the result in a game of rock, paper, scissors.
     """
     if user_input == opponent_input:
-        return Image.MEH
+        return '-'
     if WIN_TABLE[user_input] == opponent_input:
-        return Image.SMILE
+        return Image.HAPPY
     else:
         return Image.SAD
 
@@ -50,7 +50,7 @@ def get_moves():
     opponent_input = None
     user_input = None
 
-    while opponent_input is None and user_input is None:
+    while opponent_input is None or user_input is None:
         if opponent_input is None:
             # non-blocking, just checks a queue
             msg = radio.receive()
@@ -69,10 +69,16 @@ def get_moves():
             elif b:
                 user_input = 'p'
 
-        sleep(50)
+            if user_input is not None:
+                # if we set the user input
+                radio.send(user_input)
+
+        sleep(200)
 
     return did_user_win(user_input, opponent_input)
 
 while True:
+    display.show('?')
     result_img = get_moves()
     display.show(result_img)
+    sleep(2000)
