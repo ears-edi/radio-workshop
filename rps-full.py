@@ -11,11 +11,6 @@ Original author: Cameron MacLeod (@notexaclyawe)
 #   When user input send "r" "p" or "s"
 #   When both input and opponent, display win or lose
 #   ---
-# Original intention was to have a discovery step before the game began
-# but there isn't much point to that and would lead to annoying state
-# bugs where one micro:bit is listening for the opponent to connect and
-# the opponent is listening for the play
-
 from microbit import *
 import radio
 
@@ -71,6 +66,7 @@ def get_moves():
 
             if user_input is not None:
                 # if we set the user input
+                display.show(user_input)
                 radio.send(user_input)
 
         sleep(200)
