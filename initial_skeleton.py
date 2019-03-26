@@ -72,6 +72,12 @@ while True:
 # display.show(Image.HAPPY) - Shows a smiley face on the screen
 # display.show('a') - Shows the character 'a' on the screen
 #
+# Micro:bit buttons:
+#
+# button_a.was_pressed() - Returns whether the button was pressed since last time it was called
+# button_b.was_pressed()
+# button_a.get_presses() - Returns the number of presses since last call
+#
 # Micro:bit radio:
 #
 # radio.send('something') - Sends the string 'something' over your current channel
