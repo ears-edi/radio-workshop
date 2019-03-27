@@ -43,7 +43,7 @@ while True:
         radio.send(user_input)
 
     opponent_input = radio.receive()
-    if opponent_input is not None and opponent_input in ['r', 'p', 's']:
+    if opponent_input is not None:
         display.show(opponent_input)
 
     sleep(200) # 0.2s

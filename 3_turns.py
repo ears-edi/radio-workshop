@@ -47,9 +47,7 @@ while True:
                 radio.send(user_input)
 
         if opponent_input is None:
-            msg = radio.receive()
-            if msg is not None and msg in ['r', 'p', 's']:
-                opponent_input = msg
+            opponent_input = radio.receive()
 
         sleep(200) # 0.2s
 
