@@ -64,7 +64,7 @@ while True:
 # my_dict['random'] ==> KeyError
 #
 # my_dict['c'] = 42
-# my_dict['c'] == 42
+# my_dict['c'] == 42 # returns True
 #
 # Micro:bit general functions:
 #
@@ -81,7 +81,7 @@ while True:
 # Micro:bit radio:
 #
 # radio.send('something') - Sends the string 'something' over your current channel
-# msg = radio.receive() - Returns you any message that has been received. Doesn't block
+# msg = radio.receive() - Returns you any message that has been received. Doesn't block, instead returns None if nothing to receive
 #
 # Available images:
 # To see all images that are built in to micro:bit go here -> https://microbit-micropython.readthedocs.io/en/latest/image.html#attributes
